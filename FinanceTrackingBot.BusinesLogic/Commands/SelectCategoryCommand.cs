@@ -34,7 +34,6 @@ namespace FinanceTrackingBot.BusinesLogic.Commands
             var operation = new Operation
             {
                 Name = priceAndName[1],
-                UserId = user.Id
             };
 
             if (priceAndName[0].IndexOf('-') != -1)
