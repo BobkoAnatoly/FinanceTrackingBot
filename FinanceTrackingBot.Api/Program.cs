@@ -13,6 +13,7 @@ x => x.MigrationsAssembly("Application")));
 
 
 builder.Services.AddSingleton<IBotService, BotService>();
+builder.Services.AddSingleton<ICommandExecutorService, CommandExecutorService>();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
