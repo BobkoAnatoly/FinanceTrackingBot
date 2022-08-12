@@ -11,5 +11,8 @@ namespace FinanceTrackingBot.Model
             Database.EnsureCreated();
         }
         public DbSet<User> Users { get; set; } = null!;
+        public DbSet<Operation> Operations { get; set; } = null!;
+        public DbSet<Category> Categories { get; set; } = null!;
+          
     }
 }
