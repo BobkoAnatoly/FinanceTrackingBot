@@ -8,9 +8,6 @@ namespace FinanceTrackingBot.Model.Models
         public OperationType Type { get; set; }
         public bool IsFinished { get; set; }
 
-        public User User { get; set; }
-        public int? UserId { get; set; }
-
         public Category Category { get; set; }
         public int? CategoryId { get; set; }
     }
