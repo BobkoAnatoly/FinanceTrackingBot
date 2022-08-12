@@ -25,27 +25,27 @@ namespace FinanceTrackingBot.BusinesLogic.Commands
         public override async Task ExecuteAsync(Update update)
         {
             var user = await _userService.Auth(update);
-            //var inlineKeyboard = new ReplyKeyboardMarkup(new[]
-            //{
-            //    new[]
-            //    {
-            //        new KeyboardButton
-            //        {
-            //            Text = "Создать операцию"
-            //        },
-            //        new KeyboardButton
-            //        {
-            //            Text = "Получить операции"
-            //        },
-            //        new KeyboardButton
-            //        {
-            //            Text = "Аналитика"
-            //        }
-            //    }
-            //});
+            var inlineKeyboard = new ReplyKeyboardMarkup(new[]
+            {
+                new[]
+                {
+                    new KeyboardButton
+                    (
+                       "Создать операцию"
+                    ),
+                    new KeyboardButton
+                    (
+                        "Получить операции"
+                    ),
+                    new KeyboardButton
+                    (
+                        "Аналитика"
+                    )
+                }
+            });
 
-            //await _botClient.SendTextMessageAsync(user.ChatId, "Добро пожаловать! Я буду вести учёт ваших доходов и расходов! ",
-            //    ParseMode.Markdown, replyMarkup: inlineKeyboard);
+            await _botClient.SendTextMessageAsync(user.ChatId, "Добро пожаловать! Я буду вести учёт ваших доходов и расходов! ",
+                ParseMode.Markdown, replyMarkup: inlineKeyboard);
         }
     }
 }

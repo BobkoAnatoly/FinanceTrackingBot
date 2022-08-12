@@ -25,24 +25,24 @@ namespace FinanceTrackingBot.BusinesLogic.Commands
         {
             var user = await _userService.Auth(update);
 
-            //var inlineKeyboard = new InlineKeyboardMarkup(new[]
-            //{
-            //    //new []
-            //    //{
-            //    //    new InlineKeyboardButton{Text = "Аналитика за 1", CallbackData = "analytic-1"},
-            //    //    new InlineKeyboardButton{Text = "Аналитика за 7", CallbackData = "analytic-7"},
-            //    //    new InlineKeyboardButton{Text = "Аналитика за 14", CallbackData = "analytic-14"},
-            //    //},
-            //    //new []
-            //    //{
-            //    //    new InlineKeyboardButton{Text = "Аналитика за 30", CallbackData = "analytic-30"},
-            //    //    new InlineKeyboardButton{Text = "Аналитика за 90", CallbackData = "analytic-90"},
-            //    //    new InlineKeyboardButton{Text = "Аналитика за 365", CallbackData = "analytic-365"},
-            //    //}
-            //});
+            var inlineKeyboard = new InlineKeyboardMarkup(new[]
+            {
+                new []
+                {
+                    InlineKeyboardButton.WithCallbackData("Аналитика за 1","analytic-1"),
+                    InlineKeyboardButton.WithCallbackData("Аналитика за 7","analytic-7"),
+                    InlineKeyboardButton.WithCallbackData("Аналитика за 14", "analytic-14"),
+                },
+                new []
+                {
+                    InlineKeyboardButton.WithCallbackData("Аналитика за 30","analytic-30"),
+                    InlineKeyboardButton.WithCallbackData("Аналитика за 90","analytic-90"),
+                    InlineKeyboardButton.WithCallbackData("Аналитика за 365", "analytic-365"),
+                }
+            });
 
-            //await _telegramBotClient.SendTextMessageAsync(user.ChatId, "Выберите количество дней за которые нужна аналитика",
-            //    ParseMode.Markdown, replyMarkup: inlineKeyboard);
+            await _telegramBotClient.SendTextMessageAsync(user.ChatId, "Выберите количество дней за которые нужна аналитика",
+                ParseMode.Markdown, replyMarkup: inlineKeyboard);
         }
     }
 }
